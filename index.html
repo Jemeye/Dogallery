@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perritos Aleatorios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 768px)">
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Truculenta:opsz,wght@12..72,400;12..72,600;12..72,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>Dogallery</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Busca imágenes de perritos" class="search">
+            <i class="fas fa-search"></i>
+        </div>
+        <button class="favorite-button"><i class="fas fa-heart fa-2x"></i></button>
+    </header>
+    <main>
+        <input type="text" placeholder="Busca imágenes de perritos" class="search-title">
+        <section class="title-container">
+            <h2>Imágenes Aleatorias</h2>
+            <button id="boton" onclick="fetchDog()">Cambiar Imágenes</button>
+        </section>
+        <section id="gallery" class="gallery">
+
+        </section>
+
+        <!-- <section>
+            <h2>Imágenes Favoritas</h2>
+            <div class="containter-img">
+                <img alt="perrito" id="perrito5">
+                <img alt="perrito" id="perrito6">
+                <img alt="perrito" id="perrito7">
+                <img alt="perrito" id="perrito8">
+            </div>
+        </section> -->
+        
+    </main>
+</body>
+</html>

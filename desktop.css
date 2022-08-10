@@ -1,0 +1,22 @@
+.search-container{
+    position: relative;
+    display: inline;
+}
+
+.title-container button{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #e1e5cd;
+    border: solid #e1e5cd;
+    color: #555b6e;
+    cursor: pointer;
+}
+
+.search-title{
+    display:none;
+}
+
+
+

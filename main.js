@@ -5,6 +5,11 @@ const btn = document.getElementById('boton');
 const closeModal = document.getElementById('close-modal');
 const openModal = document.getElementById('open-modal');
 const modal = document.getElementById("modal");
+//crear una instancia de axios para hacer peticiones a la API
+const api = axios.create({
+	baseURL: 'https://api.thedogapi.com/v1',
+	headers: {'X-API-KEY':'90eb9416-e91c-4ac2-bb56-e85601c69bb4'}
+}); 
 
 const file = document.getElementById('file-input');
 file.addEventListener("change", () => {
@@ -44,19 +49,23 @@ function goTofavourite(){
 }
 
 async function aggfavourite(imageId){
-    console.log('agregado a favoritos');
-    const response = await fetch(`${URL_favourite}`, {
-        method: 'POST', 
-        headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': API_KEY,
-        },
-        body: JSON.stringify({image_id: imageId})
-    });
-    console.log(response);
-    dogFavourites();
-    togglefavourite();
-
+  //API CON AXIOS
+  const response = await api.post('/favourites', {
+    image_id: imageId
+  });
+  console.log(response);
+  dogFavourites();
+  togglefavourite();
+  //API CON FETCH
+    // console.log('agregado a favoritos');
+    // const response = await fetch(`${URL_favourite}`, {
+    //     method: 'POST', 
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'x-api-key': API_KEY,
+    //     },
+    //     body: JSON.stringify({image_id: imageId})
+    // });
 }
 
 async function deletefavourite(imageId){
@@ -158,5 +167,5 @@ async function uploadImage(){
 }
 
 fetchDog();
-dogFavourites();
+// dogFavourites();
 

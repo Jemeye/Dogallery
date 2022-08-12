@@ -7,7 +7,6 @@
     <title>Perritos Aleatorios</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 768px)">
-    <script src="main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Truculenta:opsz,wght@12..72,400;12..72,600;12..72,700&display=swap" rel="stylesheet">
@@ -15,33 +14,59 @@
 </head>
 <body>
     <header>
-        <h1>Dogallery</h1>
+        <button onclick="togglefavourite()"><h1>Dogallery</h1></button>
         <div class="search-container">
             <input type="text" placeholder="Busca imágenes de perritos" class="search">
             <i class="fas fa-search"></i>
         </div>
-        <button class="favorite-button"><i class="fas fa-heart fa-2x"></i></button>
+        <button class="favourite-button" onclick="goTofavourite()"><i class="fas fa-heart fa-2x"></i></button>
     </header>
     <main>
         <input type="text" placeholder="Busca imágenes de perritos" class="search-title">
-        <section class="title-container">
-            <h2>Imágenes Aleatorias</h2>
-            <button id="boton" onclick="fetchDog()">Cambiar Imágenes</button>
-        </section>
-        <section id="gallery" class="gallery">
-
-        </section>
-
-        <!-- <section>
-            <h2>Imágenes Favoritas</h2>
-            <div class="containter-img">
-                <img alt="perrito" id="perrito5">
-                <img alt="perrito" id="perrito6">
-                <img alt="perrito" id="perrito7">
-                <img alt="perrito" id="perrito8">
-            </div>
-        </section> -->
         
+        <section id="home">
+            <article class="title-container">
+                <h2>Imágenes Aleatorias</h2>
+                <button id="open-modal" onclick="showModal()">Subir Imágenes</button>
+                <button id="boton" onclick="fetchDog()">Cambiar Imágenes</button>
+            </article>
+            <article id="gallery" class="gallery">
+            </article>
+        </section>
+
+        <section class="inactive" id="favourite">
+            <article class="title-container">
+                <h2>Imágenes Favoritas</h2>
+            </article>
+            <article id="gallery-favourite" class="gallery">
+            </article>
+            <article id="error">
+                <div class="card-error">
+                    <img src="img/4f366f7b8a019ba7453db7b0c63b1140-ilustracion-de-cachorro-enfermo.png" alt="perrito triste">
+                    <h2>Oh no!</h2>
+                    <p>Aún no tienes ninguna imagen favorita.</p>
+                    <p>Reinténtalo más tarde.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="modal-container" id="modal">
+            <div class="modal">
+                <div class="modal-title">
+                    <button id="close-modal" class="modal-button-exit" onclick="showModal()">&times;</button>
+                    <h2>Sube una foto</h2>
+                </div>
+                <form class="form" id="form">
+                    <div class="file-container">
+                        <h6 id="name-file"></h6>
+                        <label for="file-input">Elige una imagen</label>
+                        <input  id="file-input" type="file" name="file">
+                    </div>
+                    <button class="modal-button" type="button" onclick="uploadImage()">Subir Imagen</button>
+                </form>
+            </div>
+        </section>
     </main>
+    <script src="main.js"></script>
 </body>
 </html>

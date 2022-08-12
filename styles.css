@@ -17,6 +17,10 @@ body{
     background-color: #faf9f9;
 }
 
+.inactive{
+    display: none;
+}
+
 header{
     display: flex;
     align-items: center;
@@ -29,6 +33,14 @@ header{
     background-color: #faf9f9;
     color:#555b6e; 
     border-bottom: 1px solid rgb(231, 231, 226);
+}
+
+header button{
+    background-color: transparent;
+    border:none;
+    color:#555b6e;
+    cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .search{
@@ -70,7 +82,7 @@ header{
     outline: none;
 }
 
-.favorite-button{
+.favourite-button{
     width: 30px;
     height: 30px;
     margin-left: 10px;
@@ -79,7 +91,7 @@ header{
     color: #555b6e;
 }
 
-.favorite-button:hover{
+.favourite-button:hover{
     color: #adc178;
 }
 
@@ -150,7 +162,7 @@ main{
     margin: 10px;
 }
 
-.img-favorite{
+.img-favourite{
     position: absolute;
     top: 100%;
     left: 100%;
@@ -160,12 +172,18 @@ main{
     align-items: center;
     width: 30px;
     height: 30px;
+    font-weight: bold;
+    font-size: 2.5rem;
     border: none;
     border-radius: 50%;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     color: #faf9f9;
     background-color: #adc178;
     cursor: pointer;
+}
+
+.img-favourite i{
+    font-size: 1.8rem;
 }
 
 /* .containter-img{
@@ -185,3 +203,145 @@ main{
     object-fit: cover;
 }
 
+.card-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 28%;
+    min-width: 300px;
+    height: 380px;
+    margin: 50px auto;
+    padding: 10px 20px 20px 20px;
+    border-radius: 16px;
+    background-color: #e1e5cd;
+}
+
+.card-error h2{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #555b6e;
+    margin: 0 0 25px 0;
+    padding: 0;
+    line-height: 25px;
+}
+
+.card-error p{
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 23px;
+    color: #555b6e;
+}
+
+.card-error img{
+    width: 220px;
+    height: 220px;
+    margin: 0;
+}
+
+.modal-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0 30px 0;
+    width: 350px;
+    height: 350px;
+    pointer-events: auto;
+    position: relative;
+    background-color: #e1e5cd;
+    color:#555b6e;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal h2{
+    margin: 50px 0 30px 0;
+}
+
+.modal-button{
+    width: 150px;
+    height: 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #adc178;
+    border: solid #adc178;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-title{
+    position: relative;
+}
+
+.modal-button-exit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: -75px;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: #adc178;
+    border: solid #adc178;
+    color:white;
+    cursor: pointer;
+    
+}
+
+.form{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.file-container input {
+    display: none;
+  }
+  
+.file-container{
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+.file-container h6{
+    padding: 0 10px 10px 10px;
+}
+
+.file-container label{
+    height: 40px;
+    width: 100px;
+    padding: 8px 21px;
+    border-radius: 6px;
+    border: 1px solid #adc178;
+    color: #555b6e;
+    cursor: pointer;
+}
+
+.show{
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
